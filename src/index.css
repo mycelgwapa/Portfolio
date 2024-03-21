@@ -1,3 +1,97 @@
-*{
+* {
     font-family: "Poppins", sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh; 
+    background: url(/img/HD-wallpaper-beautiful-minimalist-ultra-minimalist.jpg) no-repeat;
+    background-size: cover; 
+    background-position: center;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px; /* Reduced padding for smaller screens */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: transparent;
+}
+
+.logo {
+    font-size: 25px; /* Reduced font size for smaller screens */
+    color: #000000;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar a {
+    font-size: 16px; /* Reduced font size for smaller screens */
+    color: #000000;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 0 10px; /* Reduced margin for smaller screens */
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width:0;
+    height: 2px;
+    background: #000000;
+    transform: translateY(0);
+    transition: top 0.3s; 
+}
+
+.navbar a:hover::before,
+.navbar a.active::before {
+    top: -5px; 
+}
+
+.hamburger-icon {
+    display: none;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 10px; /* Adjusted padding for smaller screens */
+    }
+    
+    .logo {
+        font-size: 20px; /* Further reduced font size for smaller screens */
+    }
+    
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        background: #83b1bb; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .navbar a {
+        font-size: 18px; /* Adjusted font size for smaller screens */
+        margin: 10px 0; /* Adjusted margin for smaller screens */
+    }
 }
